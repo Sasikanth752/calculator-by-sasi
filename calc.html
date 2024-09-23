@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>my calc by sasi</title>
+    <style>
+        body{
+            color: cornflowerblue;
+            font-size: larger;
+        }
+        button 
+        {
+            width: 30%;
+            border: 2px;
+            border-style: solid;
+            background-color:cornflowerblue;
+            color: black;
+            margin: 2px 2px;
+            align : center;
+            border-radius: 50%;
+            padding: 16px;
+            text-align: center;
+            font-size: 16px;
+            
+        }
+        .calc
+        {  
+            width: 340px;  
+            height: 520px;   
+            margin: auto;  
+            border: 2px solid skyblue;  
+            border-radius: 5px;   
+            padding: 30px;
+            text-align: center;
+            background-color: darkslategray;
+        
+        }
+        input
+        {
+            width: 85%;
+            background-color: aquamarine;
+            color:black;
+            margin-bottom: 30px;
+            padding: 7%;
+            font-size: 30px;
+            border-radius: 8px;
+            
+        }
+        .disabled 
+        {
+        opacity: 0.6;
+        cursor: not-allowed;
+        size: 3%;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <p>
+        st.marys
+          AIML
+        </p>
+        <input type = "text" id = "result" readonly>
+        <div class="buttons">
+         <button onclick="deleteresult()">del</button>
+         <button onclick="clearresult()">clr</button>
+         <button onclick="result()">=</button>
+         <button onclick="appendtoresult('1')">1</button>
+         <button onclick="appendtoresult('2')">2</button>
+         <button onclick="appendtoresult('3')">3</button>
+         <button onclick="appendtoresult('4')">4</button>
+         <button onclick="appendtoresult('5')">5</button>
+         <button onclick="appendtoresult('6')">6</button>
+         <button onclick="appendtoresult('7')">7</button>
+         <button onclick="appendtoresult('8')">8</button>
+         <button onclick="appendtoresult('9')">9</button>
+         <button onclick="appendtoresult('0')">0</button>
+         <button onclick="appendtoresult('+')">+</button>
+         <button onclick="appendtoresult('-')">-</button>
+         <button onclick="appendtoresult('*')">*</button>
+         <button onclick="appendtoresult('/')">/</button>
+         <button class="button disabled">by sasi</button>
+
+        </div>
+    </div>
+    <script>
+        function deleteresult(){
+            let backspace=document.getElementById("result").value;
+            document.getElementById("result").value=backspace.slice(0,-1);
+
+        }
+        function clearresult(){
+            document.getElementById("result").value="";
+        }
+        function appendtoresult(n){
+            document.getElementById("result").value+=n;
+        }
+        function result(){
+            let a=document.getElementById("result").value;
+            let finalresult=eval(a)
+            document.getElementById("result").value=finalresult;
+
+        }
+    </script>
+</body>
+</html>
